@@ -1,12 +1,25 @@
-const qqq = []
+let my_resolve = () => {}
+const qqq = new Promise(resolve => {
+  my_resolve = resolve
+})
+  
+exports.handler = async function(event, context, callback) {
+  const query = event.queryStringParameters
+  if (query.set) {
+    my_resolve()
+    callback(null, {
+      statusCode: 200,
+      body: `set`
+    })
 
-exports.handler = function(event, context, callback) {
-  const rnd = Math.random()
-  const last = qqq[qqq.length - 1]
-  qqq.push(rnd)
+  } else {
 
-  callback(null, {
-    statusCode: 200,
-    body: `curr: ${rnd} last:${last} query: ${JSON.stringify(event.queryStringParameters)}`
-  })
+    await qqq
+    callback(null, {
+      statusCode: 200,
+      body: `1`
+    })
+
+  }
+
 }
