@@ -7,6 +7,6 @@ exports.handler = function(event, context, callback) {
 
   callback(null, {
     statusCode: 200,
-    body: `curr: ${rnd} last:${last}`
+    body: `curr: ${rnd} last:${last} query: ${JSON.stringify(event.queryStringParameters)}`
   })
 }
