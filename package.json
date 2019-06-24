@@ -1,0 +1,22 @@
+{
+  "name": "test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "netlify-lambda serve ./src"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/catsigma/test.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/catsigma/test/issues"
+  },
+  "homepage": "https://github.com/catsigma/test#readme",
+  "dependencies": {
+    "netlify-lambda": "^1.4.13"
+  }
+}
